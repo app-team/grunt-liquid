@@ -26,7 +26,7 @@ grunt.loadNpmTasks('grunt-liquid');
 
 See the grunt [docs](https://github.com/gruntjs/grunt/wiki) on how to [configure tasks](https://github.com/gruntjs/grunt/wiki/Configuring-tasks) and more advanced usage.
 
-### Example
+### Gruntfile Configuration
 
 ```js
 grunt.initConfig({
@@ -62,14 +62,21 @@ grunt.loadNpmTasks('grunt-liquid');
 grunt.registerTask('default', ['liquid']);
 ```
 
-### Options
+### package.json Configuration
 
-Options beside the following are treated as variables that are injected into the template.
+```json
+  "devDependencies": {
+    "grunt-liquid": "app-team/grunt-liquid.git"
+  }
+```
 
-#### includes
+From [NPM docs](https://www.npmjs.org/doc/files/package.json.html#git-urls-as-dependencies):
 
-Type: `Array` or `String`  
-Default: `""`
+<code>As of version 1.1.65, you can refer to GitHub urls as just "foo": "user/foo-project".</code>
+
+
+--------------------------------------------------------
+
 
 ## License
 
