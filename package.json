@@ -1,32 +1,41 @@
 {
   "name": "grunt-liquid",
   "description": "Compile Liquid templates.",
-  "version": "2.0.1",
-  "homepage": "https://github.com/sirlantis/grunt-liquid",
-  "author": "Marcel Jackwerth",
+  "version": "0.0.8",
+  "homepage": "https://github.com/app-team/grunt-liquid",
+  "author": {
+    "name": "Marcel Jackwerth"
+  },
+  "contributors": [
+    {
+    "name"  : "Saddam Azad",
+    "email" : "saddam.azad@me.com",
+    "url"   : "http://appteam.co"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/sirlantis/grunt-liquid.git"
+    "url": "git://github.com/app-team/grunt-liquid.git"
   },
   "bugs": {
-    "url": "https://github.com/sirlantis/grunt-liquid/issues"
+    "url": "https://github.com/app-team/grunt-liquid/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/sirlantis/grunt-liquid/blob/master/LICENSE-MIT"
+      "url": "https://github.com/app-team/grunt-liquid/blob/master/LICENSE-MIT"
     }
   ],
   "main": "Gruntfile.js",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 0.6.0"
   },
   "scripts": {
     "test": "grunt test",
     "prepublish": "grunt test"
   },
   "dependencies": {
-    "liquid-node": "~2.0.0"
+    "liquid-node": "~0.1.0"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.2.0",
@@ -47,5 +56,12 @@
   },
   "keywords": [
     "gruntplugin"
-  ]
+  ],
+  "readme": "# [grunt](http://gruntjs.com)-liquid [![Build Status](https://travis-ci.org/app-team/grunt-liquid.png?branch=master)](https://travis-ci.org/app-team/grunt-liquid)\n\n> Compile Liquid (node-liquid) templates.\n\n## Getting Started\n\nIf you haven't used [grunt][] before, be sure to check out the [Getting Started][] guide, as it explains how to create a [gruntfile][Getting Started] as well as install and use grunt plugins. Once you're familiar with that process, install this plugin with this command:\n\n```sh\nnpm install --save-dev grunt-liquid\n```\n\nOnce the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:\n\n```js\ngrunt.loadNpmTasks('grunt-liquid');\n```\n\n*Tip: the [load-grunt-tasks](https://github.com/sindresorhus/load-grunt-tasks) module makes it easier to load multiple grunt tasks.*\n\n[grunt]: http://gruntjs.com\n[Getting Started]: https://github.com/gruntjs/grunt/wiki/Getting-started\n\n\n## Documentation\n\nSee the grunt [docs](https://github.com/gruntjs/grunt/wiki) on how to [configure tasks](https://github.com/gruntjs/grunt/wiki/Configuring-tasks) and more advanced usage.\n\n### Example\n\n```js\ngrunt.initConfig({\n  liquid: {\n    options: {\n      includes: 'test/fixtures/inc',\n      products: [\n        {\n          name: \"Wonderflonium\",\n          price: \"$9.99\",\n          description: \"Great for building freeze rays!\"\n        }\n      ]\n    },\n    pages: {\n      files: [\n        { expand: true, flatten: true, src: 'src/*.liquid', dest: 'dest/', ext: '.html' }\n      ]\n    }\n  },\n});\n\ngrunt.loadNpmTasks('grunt-liquid');\ngrunt.registerTask('default', ['liquid']);\n```\n\n### Options\n\nOptions beside the following are treated as variables that are injected into the template.\n\n#### includes\n\nType: `Array` or `String`  \nDefault: `\"\"`\n\n## License\n\nMIT © Marcel Jackwerth",
+  "readmeFilename": "README.md",
+  "_id": "grunt-liquid@0.0.8",
+  "dist": {
+    "shasum": "74471403c49203de70d5fce11e2dd5e6e17de788"
+  },
+  "_from": "grunt-liquid@0.0.8"
 }
