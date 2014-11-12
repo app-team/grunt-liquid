@@ -7,7 +7,7 @@
 If you haven't used [grunt][] before, be sure to check out the [Getting Started][] guide, as it explains how to create a [gruntfile][Getting Started] as well as install and use grunt plugins. Once you're familiar with that process, install this plugin with this command:
 
 ```sh
-npm install --save-dev grunt-liquid
+npm install --save-dev app-team/grunt-liquid
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
@@ -30,23 +30,34 @@ See the grunt [docs](https://github.com/gruntjs/grunt/wiki) on how to [configure
 
 ```js
 grunt.initConfig({
-  liquid: {
-    options: {
-      includes: 'test/fixtures/inc',
-      products: [
-        {
-          name: "Wonderflonium",
-          price: "$9.99",
-          description: "Great for building freeze rays!"
-        }
-      ]
-    },
-    pages: {
-      files: [
-        { expand: true, flatten: true, src: 'src/*.liquid', dest: 'dest/', ext: '.html' }
-      ]
-    }
-  },
+
+      liquid: {
+      options: {
+        includes: ['views/includes/', 'views/layouts/']
+      },
+      pages: {
+        files: [{
+          expand: true,
+          flatten: true,
+          src: ["views/**/*.liquid", "!views/includes/*.liquid", "!views/layouts/*.liquid"],
+          dest: 'public/',
+          ext: '.html'
+        }]
+      }
+    }, // end liquid
+
+    watch: {
+
+      liquidTask: {
+        options: {
+          spawn: false,
+        },
+        files: "views/**/*.liquid",
+        tasks: ['liquid']
+      }
+
+    } // end watch
+
 });
 
 grunt.loadNpmTasks('grunt-liquid');
@@ -64,4 +75,4 @@ Default: `""`
 
 ## License
 
-MIT © Marcel Jackwerth
+MIT © Marcel Jackwerth. Forked from [sirlantis](https://github.com/sirlantis/liquid-node) and [Mixture.io](http://mixture.io)
