@@ -1,4 +1,4 @@
-# [grunt](http://gruntjs.com)-liquid [![Build Status](https://travis-ci.org/sirlantis/grunt-liquid.png?branch=master)](https://travis-ci.org/sirlantis/grunt-liquid)
+# [grunt](http://gruntjs.com)-liquid [![Build Status](https://travis-ci.org/app-team/grunt-liquid.svg)](https://travis-ci.org/app-team/grunt-liquid)
 
 > Compile Liquid (node-liquid) templates.
 
@@ -31,7 +31,7 @@ See the grunt [docs](https://github.com/gruntjs/grunt/wiki) on how to [configure
 ```js
 grunt.initConfig({
 
-      liquid: {
+    liquid: {
       options: {
         includes: ['views/includes/', 'views/layouts/']
       },
@@ -47,7 +47,6 @@ grunt.initConfig({
     }, // end liquid
 
     watch: {
-
       liquidTask: {
         options: {
           spawn: false,
@@ -55,7 +54,6 @@ grunt.initConfig({
         files: "views/**/*.liquid",
         tasks: ['liquid']
       }
-
     } // end watch
 
 });
